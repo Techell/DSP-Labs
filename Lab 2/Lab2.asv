@@ -2,17 +2,17 @@ clc;
 close all;
 clear;
 
-omega = linspace(0, 0.5, 85)
+omega = linspace(0, 0.5, 200)
 m = 0:99;
-filename = strcat('DVRF.txt')
+filename = strcat('ЧХ.txt')
 addpath(genpath('Пункт 1'))
 
 data = importdata(filename);
 
-plot(omega, data(:, 3))
+plot(omegadata(:,2),'-o', 'MarkerFaceColor','blue')
 grid('on')
 
-title('м ДВРФ входного сигнала')
-ylabel('S(\Omega)')
-xlabel('Безразмерная частота')
-print(['модуль выходного сигнала ДВРФ'],'-dpng')
+title('аргумент ДВРФ выходного сигнала')
+ylabel('arg{S(\Omega)}')
+xlabel('Безразмерная частота \Omega')
+print(['ЧХ фильтра'],'-dpng')

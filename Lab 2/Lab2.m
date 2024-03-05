@@ -2,17 +2,17 @@ clc;
 close all;
 clear;
 
-omega = linspace(0, 0.5, 85)
+omega = linspace(0, 0.5, 200)
 m = 0:99;
-filename = strcat('DVRF.txt')
+filename = strcat('Signals_filt.txt')
 addpath(genpath('Пункт 1'))
 
 data = importdata(filename);
 
-plot(omega, data(:, 4))
+plot(data(:,2),'-o', 'MarkerFaceColor','blue')
 grid('on')
 
-title('аргумент ДВРФ выходного сигнала')
-ylabel('arg(S(\Omega))')
-xlabel('Безразмерная частота')
-print(['аргумент выходного сигнала ДВРФ'],'-dpng')
+title('Выходной сигнал')
+ylabel('x[n]')
+xlabel('Отсчеты n')
+print(['Выходной сигнал'],'-dpng')
